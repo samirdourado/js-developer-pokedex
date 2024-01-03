@@ -48,7 +48,57 @@ function getEspecificPokemon(pokemonNumber) {
 };
 
 function pokemonModal(pokemon) {
-    console.log('Dados capturados', pokemon);    
+    // console.log('Dados capturados', pokemon);
+    const modalHolder = document.getElementById('modal_holder');
+    const pokeModal = document.createElement("section");    
+    const modalHeader = document.createElement('header');
+    const pokemonNumber = document.createElement('p');
+    const closeBtn = document.createElement('button');
+    const pokemonName = document.createElement('h2');    
+    const modalBody = document.createElement('main');
+    const sectionTypes = document.createElement('ul');
+    const types = document.createElement('li');    
+    const figure = document.createElement('figure');
+    const image = document.createElement('img');
+    
+    
+    pokemonNumber.innerText = `#${pokemon.number}`;
+    closeBtn.innerText = `X`;
+    pokemonName.innerText = `${pokemon.name}`;
+    image.src = pokemon.photo;
+    
+    pokemon.types.map((type) => {
+        types.innerText += type
+    });
+    
+    modalHolder.classList.add(`modal_holder`);
+    modalHolder.classList.add(`${pokemon.type}`);    
+    pokeModal.classList.add('poke_modal');
+    modalHeader.classList.add('poke_modal_header');
+    modalBody.classList.add('poke_modal_body');
+
+    pokemonName.classList.add('name')
+    
+
+    modalHolder.addEventListener('click', () => {
+        modalHolder.classList.remove(`modal_holder`)
+        modalHolder.classList.remove(`${pokemon.type}`)
+        modalHolder.innerHTML = ""
+    });
+
+    closeBtn.addEventListener('click', () => {
+        modalHolder.classList.remove(`modal_holder`)
+        modalHolder.classList.remove(`${pokemon.type}`)
+        modalHolder.innerHTML = ""
+    });
+
+    
+    modalHeader.append(pokemonNumber, closeBtn)
+    sectionTypes.append(types)
+    figure.appendChild(image)
+    modalBody.append(types, figure)
+    pokeModal.append(modalHeader, pokemonName, modalBody)
+    modalHolder.appendChild(pokeModal)
 }
 
 loadPokemonItens(offset, limit)
