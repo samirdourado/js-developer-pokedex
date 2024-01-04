@@ -2,39 +2,90 @@
 .modal_holder {
     width: 100vw;
     height: 100vh;
+    min-width: 23.125rem;
     position: absolute;
     left: 0;
     top: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    /* background-color: black; */
-    /* opacity: 0.5; */
-}
-
-.apply_flex {
-    display: flex;
+    align-items: center;    
 }
 
 .poke_modal {    
     width: 100%;
-    height: 100%;
-    max-width: 600px;
-    max-height: 450px;
-    margin: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-    /* opacity: 0; */
+    min-width: 21.875rem;    
+    max-width: 37.5rem;
+    max-height: 28.125rem;
+    margin: 1.25rem;
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;    
     background-color: white;
-    border-radius: 8px;
-    padding: 10px;
+    border-radius: 0.5rem;
+    padding: 0.625rem;
     display: flex;
     flex-direction: column;
+    -webkit-box-shadow: 0px 0px 10px 2px #000000; 
+    box-shadow: 0px 0px 10px 2px #000000;    
 }
 
-.poke_modal_header, .poke_modal_body {
+.poke_modal_header, .poke_modal_body {    
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+.pokemon_number {
+    color: #000;    
+    text-align: left;
+    font-size: 1rem;
+}
+
+.pokemon_name {
+    color: #000;
+    text-align: center;
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+.pokemon_types {    
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    list-style: none;
+}
+
+.pokemon_type {
+    color: #fff;
+    padding: 0.75rem;
+    margin: .25rem 0;
+    font-size: 16px;
+    border-radius: 1rem;
+    filter: brightness(1.1);
+    text-align: center;
+    text-transform: capitalize;
+    text-shadow: #000 0.0625rem 0.0625rem 0.125rem
+}
+
+.photo_holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+}
+
+.photo {
+    max-width: 100%;
+    height: 9.375rem;
+}
+
+.close_button {
+    background-color: transparent;
+    border-radius: 100%;
+    border: solid 0.125rem #ccc;
+    color: #ccc;
+    font-weight: 600;        
+    cursor: pointer;
+}
